@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  postgres-rule-check-service:
+    image: postgres:15
+    container_name: postgres_db_conditioncheckservice
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: schema_manager
+    ports:
+      - "5532:5432"
+    volumes:
+      - postgres_rulecheck_data:/var/lib/postgresql/data
+volumes:
+  postgres_rulecheck_data:

@@ -1,1 +1,24 @@
-spring.application.name=condition-service
+spring:
+  application:
+    name: condition-service
+  datasource:
+    url: jdbc:postgresql://localhost:5532/schema_manager
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+
+clickhouse:
+  url: jdbc:clickhouse://localhost:8123
+  username: default
+  password: ""
+  database: schema_data?compress=0
+
+server:
+  port: 8081

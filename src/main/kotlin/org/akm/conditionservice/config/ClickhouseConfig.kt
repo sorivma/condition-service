@@ -1,4 +1,4 @@
-package org.akm.contragentdatastore.core.config.clickhouse
+package org.akm.conditionservice.config
 
 import com.clickhouse.jdbc.ClickHouseDataSource
 import org.springframework.beans.factory.annotation.Qualifier
@@ -18,8 +18,9 @@ class ClickHouseProperties {
 }
 
 @Configuration
+@ConfigurationProperties(prefix = "clickhouse")
 class ClickhouseConfig(
-    private val properties: ClickHouseProperties
+    private val properties: ClickHouseProperties,
 ) {
     @Bean
     @Qualifier("clickhouse")
